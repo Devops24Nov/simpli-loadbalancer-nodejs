@@ -19,12 +19,12 @@
 
 - name: Build Docker image from Dockerfile
   docker_image:
-    name: web
+    name: lb
     path: "simpli-lb"
     state: present
 - name: Running the container1
   docker_container:
-    image: web:latest
+    image: lb:latest
     state: started
     name: "simpli-lb"
     ports:
