@@ -28,14 +28,14 @@
   docker_container:
     image: web:latest
     state: started
-    name: "simpli-app"
+    name: "simpli-app1"
     ports:
      - "3001:3000" 
 - name: Running the container2
   docker_container:
     image: web:latest
     state: started
-    name: "simpli-app"
+    name: "simpli-app2"
     ports:
      - "3002:3000" 
 - name: Check if container is running
