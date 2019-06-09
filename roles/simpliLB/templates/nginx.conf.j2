@@ -1,6 +1,6 @@
 upstream my-app {
-  server "{{ ansible_hostname }}":"{{ port }}" weight=1;
-  server "{{ ansible_hostname }}":{{ port }} weight=1;
+  server "{{ inventory_hostname }}":"{{ port }}" weight=1;
+  server "{{ inventory_hostname }}":{{ port }} weight=1;
 }
 
 server {
