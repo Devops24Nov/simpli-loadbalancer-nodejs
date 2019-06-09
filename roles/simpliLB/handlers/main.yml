@@ -8,7 +8,7 @@
 - name: Rerunning the container1
   docker_container:
     image: lb:latest
-    state: started
+    state: restarted
     name: "simpli-lb"
     ports:
      - "8080:80" 
