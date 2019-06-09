@@ -3,4 +3,4 @@
   roles:
     - docker
     - simpliApp
-    #- simpliLB   
+    - simpliLB   
