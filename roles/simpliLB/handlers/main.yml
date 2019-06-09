@@ -1,2 +1,14 @@
 ---
-# handlers file for simpliLB
+- name: rebuild Docker image from Dockerfile
+  docker_image:
+    name: lb
+    path: "simpli-lb"
+    state: present
+    
+- name: Rerunning the container1
+  docker_container:
+    image: lb:latest
+    state: started
+    name: "simpli-lb"
+    ports:
+     - "8080:80" 
