@@ -1,0 +1,10 @@
+upstream my-app {
+  server "{{ ansible_hostname }}":"{{ port }}" weight=1;
+  server "{{ ansible_hostname }}":{{ port }} weight=1;
+}
+
+server {
+    location / {
+        proxy_pass http://my-app;
+    }
+}
