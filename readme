@@ -1,0 +1,11 @@
+1. Launch ubuntu16 from aws
+
+2. install ansible:
+    sudo apt-get install software-properties-common  && \
+    sudo apt-add-repository ppa:ansible/ansible && \
+    sudo apt-get update && \
+    sudo apt-get install ansible
+
+3. authenticate password less communication
+
+4. ansible-playbook -i site.ini site.yml -e "groupname=dev"
