@@ -29,6 +29,7 @@
     name: lb
     path: "simpli-lb"
     state: present
+  notify: Rerunning the container1    
 - name: Running the container1
   docker_container:
     image: lb:latest
@@ -36,6 +37,6 @@
     name: "simpli-lb"
     ports:
      - "8080:80" 
-  notify: Rerunning the container1
+  
 - name: Check if container is running
   shell: docker ps
