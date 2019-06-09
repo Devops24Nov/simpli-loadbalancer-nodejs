@@ -15,7 +15,13 @@
     mode: 0777
   with_items:
     - Dockerfile
-    - nginx.conf
+- name: copy files to simpli-app
+  template:
+    src: "{{ item }}"
+    dest: "simpli-lb/nginx.conf"
+    mode: 0777
+  with_items:
+    - nginx.conf.j2    
 
 - name: Build Docker image from Dockerfile
   docker_image:
