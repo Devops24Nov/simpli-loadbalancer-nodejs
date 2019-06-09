@@ -2,5 +2,5 @@
 - hosts: "{{ groupname }}"
   roles:
     - docker
-    #- simpliApp
+    - simpliApp
     #- simpliLB   

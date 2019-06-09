@@ -1,2 +1,33 @@
 ---
-# tasks file for simpliLB
+- name: Install pip
+  apt: 
+    name: python-pip 
+    state: present
+    update_cache: yes
+      
+- name: install docker-py
+  pip: name=docker-py
+
+- name: copy files to simpli-app
+  copy:
+    src: "{{ item }}"
+    dest: "simpli-lb/"
+    mode: 0777
+  with_items:
+    - Dockerfile
+    - nginx.conf
+
+- name: Build Docker image from Dockerfile
+  docker_image:
+    name: web
+    path: "simpli-lb"
+    state: present
+- name: Running the container1
+  docker_container:
+    image: web:latest
+    state: started
+    name: "simpli-lb"
+    ports:
+     - "8080:80" 
+- name: Check if container is running
+  shell: docker ps
