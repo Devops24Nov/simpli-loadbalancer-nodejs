@@ -1,0 +1,6 @@
+---
+- hosts: "{{ groupname }}"
+  roles:
+    - docker
+    #- simpliApp
+    #- simpliLB   
