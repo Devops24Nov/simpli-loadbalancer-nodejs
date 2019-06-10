@@ -6,6 +6,12 @@
     sudo apt-get update && \
     sudo apt-get install ansible
 
-3. authenticate password less communication
+3. authenticate password less communication 
+    ssh-keygen
+    edit ~/.ssh/authorized_keys with generated public key in target machine.
+    
+4. clone this repo and update with target machine hostname in inventory file.    
 
-4. ansible-playbook -i site.ini site.yml -e "groupname=dev"
+5. ansible-playbook -i site.ini site.yml -e "groupname=dev"
+
+6. access the loadbalancer url : http://lbhostname:8080/
