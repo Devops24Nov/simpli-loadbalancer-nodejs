@@ -1,3 +1,12 @@
+Problem statement:  start simpli appliction with high availability by using nginx loadbalancers using the dockar containers.
+
+Solution::
+
+   1. build and start the multiple docker nodejs containers .
+   2. start nginx docker cotainers to loadbalance the containers.
+
+Steps to setup conatiner appications throguh Ansible:
+
 1. Launch ubuntu16 from aws
 
 2. install ansible:
