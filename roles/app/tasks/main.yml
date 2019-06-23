@@ -1,14 +1,14 @@
 ---
 - name: Install pip
-  apt: 
-    name: python-pip 
+  apt:
+    name: python-pip
     state: present
     update_cache: yes
-      
+
 - name: install docker-py
   pip: name=docker-py
 
-- name: copy files to simpli-app
+- name: copy files to appln
   copy:
     src: "{{ item }}"
     dest: "{ansible_env.HOME}}/simpli-app/"
@@ -22,21 +22,21 @@
 - name: Build Docker image from Dockerfile
   docker_image:
     name: web
-    path: "{ansible_env.HOME}}/simpli-app"
+    path: "{ansible_env.HOME}}/app"
     state: present
 - name: Running the container1
   docker_container:
     image: web:latest
     state: started
-    name: "simpli-app1"
+    name: "app1"
     ports:
-     - "3001:3000" 
+     - "3001:3000"
 - name: Running the container2
   docker_container:
     image: web:latest
     state: started
-    name: "simpli-app2"
+    name: "app2"
     ports:
-     - "3002:3000" 
+     - "3002:3000"
 - name: Check if container is running
   shell: docker ps
