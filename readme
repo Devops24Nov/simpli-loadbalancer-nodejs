@@ -19,8 +19,9 @@ Steps to setup conatiner appications throguh Ansible:
     ssh-keygen
     edit ~/.ssh/authorized_keys with generated public key in target machine.
     
-4. Clone this repo and update with target machine hostname in inventory file.    
-
+4. Clone  repo and update with target machine hostname in inventory file.  
+     https://github.com/quickfixtech/simpli-loadbalancer-nodejs.git
+     
 5. ansible-playbook -i site.ini site.yml -e "groupname=dev"
 
 6. access the loadbalancer url : http://lbhostname:8080/
