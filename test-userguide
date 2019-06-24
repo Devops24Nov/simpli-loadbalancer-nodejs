@@ -9,3 +9,5 @@
       molecule init role -r role_name
    or for existing roles:
       molecule init scenario -r my-role
+3. Test     
+     molecule test 
