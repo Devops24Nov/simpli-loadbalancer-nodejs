@@ -9,7 +9,6 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 @pytest.mark.parametrize('pkg', [
   'nginx',
-  'firewalld'
 ])
 def test_pkg(host, pkg):
     package = host.package(pkg)
@@ -19,7 +18,6 @@ def test_pkg(host, pkg):
 
 @pytest.mark.parametrize('svc', [
   'nginx',
-  'firewalld'
 ])
 def test_svc(host, svc):
     service = host.service(svc)
