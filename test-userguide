@@ -1,13 +1,11 @@
-1. virtualenv :
- 
-    sudo pip install virtualenvwrapper
-    export WORKON_HOME=~/envs
-    source /usr/local/bin/virtualenvwrapper.sh
-    mkvirtualenv mocule
-2. Molecule
-      pip install molecule ansible docker
-      molecule init role -r role_name
-   or for existing roles:
-      molecule init scenario -r my-role
+1. Molecule
+      pip install molecule 
+      pip install ansible
+      pip install docker
+      
+ 2. Initialize the role  
+    molecule init role -r app -d docker
+    molecule init role -r geerlingguy.example -d docker
+   
 3. Test     
      molecule test 
