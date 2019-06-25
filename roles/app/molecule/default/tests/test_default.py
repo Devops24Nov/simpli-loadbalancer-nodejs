@@ -8,22 +8,18 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 @pytest.mark.parametrize('pkg', [
-  'httpd',
-  'firewalld'
+  'npm',
 ])
 def test_pkg(host, pkg):
     package = host.package(pkg)
-
     assert package.is_installed
 
 
 @pytest.mark.parametrize('svc', [
-  'httpd',
-  'firewalld'
+  'npm',
 ])
 def test_svc(host, svc):
     service = host.service(svc)
-
     assert service.is_running
     assert service.is_enabled
 
